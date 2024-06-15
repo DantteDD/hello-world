@@ -1,0 +1,21 @@
+# Copy & paste submit for PART 1 exercise 1.5
+
+REPOSITORY                          TAG               IMAGE ID       CREATED       SIZE
+devopsdockeruh/simple-web-service   ubuntu            4e3362e907d5   3 years ago   83MB
+devopsdockeruh/simple-web-service   alpine            fd312adc88e0   3 years ago   15.7MB
+
+# --> alpine is  67MB smaller at 15.7MB vs ubuntu 83MB
+
+C:\Users\danie>docker run -d --rm -it --name exe1.5 devopsdockeruh/simple-web-service:alpine
+d85dc2778969e6c2c0d74ee20deab43e248b369e9fdc29d014e747bb3c1b044b
+
+C:\Users\danie>docker exec exe1.5 tail -f ./text.log
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2024-06-15 12:31:36 +0000 UTC
+2024-06-15 12:31:38 +0000 UTC
+2024-06-15 12:31:40 +0000 UTC
+2024-06-15 12:31:42 +0000 UTC
+2024-06-15 12:31:44 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+
+# --> Secret message functionality is still the same with link to https://github.com/docker-hy
