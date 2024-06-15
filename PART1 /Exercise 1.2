@@ -1,0 +1,43 @@
+# Copy & paste submit for PART 1 exercise 1.2
+
+# Existing open containers
+C:\Users\danie>docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                      PORTS     NAMES
+248b5888eddd   nginx     "/docker-entrypoint.…"   30 minutes ago   Exited (0) 29 minutes ago             cool_yonath
+6b680462e0a2   nginx     "/docker-entrypoint.…"   30 minutes ago   Exited (0) 28 minutes ago             gifted_taussig
+45f6aff79a17   nginx     "/docker-entrypoint.…"   30 minutes ago   Up 30 minutes               80/tcp    nostalgic_tharp
+
+# Existing open images
+C:\Users\danie>docker image ls
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+nginx        latest    dde0cca083bc   2 weeks ago   188MB
+
+C:\Users\danie>docker container stop nostalgic_tharp
+nostalgic_tharp
+
+C:\Users\danie>docker rm cool_yonath
+cool_yonath
+
+C:\Users\danie>docker rm gifted_taussig
+gifted_taussig
+
+C:\Users\danie>docker rm nostalgic_tharp
+nostalgic_tharp
+
+C:\Users\danie>docker rmi nginx
+Untagged: nginx:latest
+Untagged: nginx@sha256:56b388b0d79c738f4cf51bbaf184a14fab19337f4819ceb2cae7d94100262de8
+Deleted: sha256:dde0cca083bc75a0af14262b1469b5141284b4399a62fef923ec0c0e3b21f5bc
+Deleted: sha256:7f312d50ef9273310c9193b299c0f046e07d98efe298271418ba6b335f402e6b
+Deleted: sha256:546adcd8106e3d3cdde9c72dd40b44e1c7ace56c9a101b7c727a209b4a30cde6
+Deleted: sha256:d7708c25ce0484ee9265905ace649799ac6a25a7ca54b70696992451dd434b66
+Deleted: sha256:36cb17d20bc9daac929b6377c16fe26704818b582496aadc3d2c03cc9623903e
+Deleted: sha256:099395f1f9a64c73b86f22966b5894e0a857d60dbaadecfbb8c8f24efc988cf9
+Deleted: sha256:9527f94a33967307a6e3c9bcff2e71303e679100d9d919200a512068739391af
+Deleted: sha256:1387079e86adf524e7e92bada71d261d9ff58f34409751ab36560385262a8386
+
+C:\Users\danie>docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+C:\Users\danie>docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
