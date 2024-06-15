@@ -1,0 +1,54 @@
+# Copy & paste submit for PART 1 exercise 1.7:
+
+#script.sh:
+while true
+do
+  echo "Input website:"
+  read website; echo "Searching.."
+  sleep 1; curl http://$website
+done
+
+#Dockerfile:
+FROM ubuntu:22.04
+RUN apt-get -y update
+RUN apt-get -y install curl
+WORKDIR /usr/src/app
+COPY script.sh .
+RUN chmod +x script.sh
+CMD ./script.sh
+
+PS C:\Users\danie\OneDrive\Desktop\HY DevOps\PART 1\Exercise 1.7> docker build . -t curler
+[+] Building 13.1s (11/11) FINISHED                                                                      docker:default
+ => [internal] load build definition from Dockerfile                                                               0.0s
+ => => transferring dockerfile: 532B                                                                               0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:22.04                                                    0.8s
+ => [internal] load .dockerignore                                                                                  0.0s
+ => => transferring context: 2B                                                                                    0.0s
+ => CACHED [1/6] FROM docker.io/library/ubuntu:22.04@sha256:19478ce7fc2ffbce89df29fea5725a8d12e57de52eb9ea570890d  0.0s
+ => [internal] load build context                                                                                  0.0s
+ => => transferring context: 30B                                                                                   0.0s
+ => [2/6] RUN apt-get -y update                                                                                    5.9s
+ => [3/6] RUN apt-get -y install curl                                                                              5.6s
+ => [4/6] WORKDIR /usr/src/app                                                                                     0.0s
+ => [5/6] COPY script.sh .                                                                                         0.0s
+ => [6/6] RUN chmod +x script.sh                                                                                   0.4s
+ => exporting to image                                                                                             0.2s
+ => => exporting layers                                                                                            0.2s
+ => => writing image sha256:a7f3d87c70eef21f9caebe614683bc2f5790fbdfa9b6441b279488aae77df95a                       0.0s
+ => => naming to docker.io/library/curler                                                                          0.0s
+
+View build details: docker-desktop://dashboard/build/default/default/f6nobg0j61co2xbt1kfe00dwk
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+PS C:\Users\danie\OneDrive\Desktop\HY DevOps\PART 1\Exercise 1.7> docker run -it curler
+Input website:
+helsinki.fi
+Searching..
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx/1.22.1</center>
+</body>
+</html>
