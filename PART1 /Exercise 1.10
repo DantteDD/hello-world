@@ -1,0 +1,4 @@
+# Commands for PART 1 exercise 1.10
+
+docker build -t web-server .
+docker run -p 8080:8080 web-server
